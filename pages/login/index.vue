@@ -7,7 +7,7 @@
       <div class="login-form">
         <div class="login-logo">
           <img class="login-icon" src="@/assets/images/logo.svg" alt="" />
-          <h2 class="logo-text">北斗</h2>
+          <h2 class="logo-text">北斗2</h2>
         </div>
         <!-- <LoginForm></LoginForm> -->
         <el-form ref="loginFormRef" :model="loginForm" :rules="loginRules" size="large">
