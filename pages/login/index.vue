@@ -9,7 +9,7 @@
           <img class="login-icon" src="@/assets/images/logo.svg" alt="" />
           <h2 class="logo-text">北斗</h2>
         </div>
-        <!-- <LoginForm></LoginForm> -->
+        <LoginForm></LoginForm>
       </div>
     </div>
   </div>
