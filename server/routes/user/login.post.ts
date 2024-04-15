@@ -1,6 +1,6 @@
 //登录接口
 // import { eq } from 'drizzle-orm'
-// import { generateToken } from "../../utils/auth";
+import { generateToken } from "../../utils/auth";
 export default eventHandler( async (event) => {
 console.log(event);
   // const body = await readBody(event);
@@ -24,18 +24,18 @@ console.log(event);
   
   // // 如果验证通过，生成一个包含用户信息的 payload
   // const payload = { id: nameMatch[0].id };
-  // // const payload = ;
+  const payload = {id:0};
 
   // // 生成 JWT 令牌
-  // const token = generateToken(payload);
+  const token = generateToken(payload);
 
-  // // // 返回包含令牌的响应
-  // // res.json({ token });
-  // await setUserSession(event, {
-  //   user: {
-  //     token:token
-  //   },
-  //   // Any extra fields
-  // })
+  // // 返回包含令牌的响应
+  // res.json({ token });
+  await setUserSession(event, {
+    user: {
+      token:token
+    },
+    // Any extra fields
+  })
   return {code:200,data:'token',message:'登录成功'}
  })
