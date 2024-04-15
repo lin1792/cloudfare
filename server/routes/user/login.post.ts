@@ -29,17 +29,16 @@ console.log(event);
   // const payload = {id:0};
 
   // // 生成 JWT 令牌
-  await generateToken(payload);
+  const token = await generateToken(payload);
   // const token = '1231231';
-// console.log('token',token);
 
   // // 返回包含令牌的响应
   // res.json({ token });
-  // await setUserSession(event, {
-  //   user: {
-  //     token:'token'
-  //   },
-  //   // Any extra fields
-  // })
-  return {code:200,data:'token',message:'登录成功'}
+  await setUserSession(event, {
+    user: {
+      token:token
+    },
+    // Any extra fields
+  })
+  return {code:200,data:token,message:'登录成功'}
  })

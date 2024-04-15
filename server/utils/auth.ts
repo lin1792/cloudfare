@@ -1,6 +1,6 @@
 // ~/utils/auth.js
 
-import jwt from "jsonwebtoken";
+// import jwt from "jsonwebtoken";
 
 // 生成 JWT 令牌
 export function generateToken(payload:any) {
@@ -13,7 +13,8 @@ export function generateToken(payload:any) {
   const expiresIn = '1d';//天
 
   // 使用 payload、密钥和有效期生成令牌
-  const token = jwt.sign(payload, secretKey, { expiresIn });
+  // const token = jwt.sign(payload, secretKey, { expiresIn });
+  const token = '123123123';
 
   return token;
 }
