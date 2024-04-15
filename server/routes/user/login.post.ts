@@ -29,8 +29,9 @@ console.log(event);
   // const payload = {id:0};
 
   // // 生成 JWT 令牌
-  // const token = generateToken(payload);
-  const token = '1231231';
+  const token = await generateToken(payload);
+  // const token = '1231231';
+console.log('token',token);
 
   // // 返回包含令牌的响应
   // res.json({ token });
@@ -40,5 +41,5 @@ console.log(event);
     },
     // Any extra fields
   })
-  return {code:200,data:token,message:'登录成功'}
+  return {code:200,data:'token',message:'登录成功'}
  })
