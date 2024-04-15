@@ -31,6 +31,7 @@ console.log(event);
   // // 生成 JWT 令牌
   const token = await generateToken(payload);
   // const token = '1231231';
+console.log(token);
 
   // // 返回包含令牌的响应
   // res.json({ token });
