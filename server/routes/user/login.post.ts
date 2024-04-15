@@ -28,13 +28,13 @@ export default eventHandler( async (event) => {
   // 生成 JWT 令牌
   const token = generateToken(payload);
 
-  // 返回包含令牌的响应
-  // res.json({ token });
-  await setUserSession(event, {
-    user: {
-      token:token
-    },
-    // Any extra fields
-  })
+  // // 返回包含令牌的响应
+  // // res.json({ token });
+  // await setUserSession(event, {
+  //   user: {
+  //     token:token
+  //   },
+  //   // Any extra fields
+  // })
   return {code:200,data:token,message:'登录成功'}
  })
