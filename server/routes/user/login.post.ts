@@ -30,11 +30,11 @@ export default eventHandler( async (event) => {
 
   // 返回包含令牌的响应
   // res.json({ token });
-  // await setUserSession(event, {
-  //   user: {
-  //     token:token
-  //   },
-  //   // Any extra fields
-  // })
+  await setUserSession(event, {
+    user: {
+      token:token
+    },
+    // Any extra fields
+  })
   return {code:200,data:token,message:'登录成功'}
  })
