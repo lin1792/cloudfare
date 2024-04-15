@@ -3,7 +3,7 @@ import { eq } from 'drizzle-orm'
 import { generateToken } from "../../utils/auth";
 export default eventHandler( async (event) => {
 
-  const body = await readBody(event);
+  const body:any = await readBody(event);
   console.log('123', body);
 
 
@@ -12,7 +12,7 @@ export default eventHandler( async (event) => {
 
   // 在这里进行用户名和密码的验证逻辑
   // await useDB().select().from(tables.todos).where(eq(tables.todos.userId, session.user.id)).all()
-  const nameMatch = await useDB().select().from(tables.user).where(eq(tables.user.userName, userName))
+  const nameMatch:any = await useDB().select().from(tables.user).where(eq(tables.user.userName, userName))
   console.log(nameMatch);
   if (nameMatch.length<1) {
     return {code:401,data:null,message:'用户名不存在'}
