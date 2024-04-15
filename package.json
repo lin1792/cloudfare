@@ -8,7 +8,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "db:generate": "drizzle-kit generate:sqlite"
+    "db:generate": "drizzle-kit generate:sqlite",
+    "lint:eslint": "eslint --fix --ext .js,.ts,.vue ./src",
+    "lint:prettier": "prettier --write \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:lint-staged": "lint-staged"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
@@ -16,6 +20,7 @@
     "drizzle-orm": "^0.30.8",
     "element-plus": "^2.7.0",
     "h3-zod": "^0.5.3",
+    "jsonwebtoken": "^9.0.2",
     "nuxt": "^3.11.2",
     "nuxt-auth-utils": "^0.0.22",
     "vue": "^3.4.21",
@@ -23,8 +28,19 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@nuxt/eslint-config": "^0.3.6",
+    "@nuxtjs/stylelint-module": "^5.2.0",
     "drizzle-kit": "^0.20.14",
+    "eslint": "^9.0.0",
     "sass": "^1.75.0",
+    "stylelint": "^16.3.1",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recess-order": "^5.0.0",
+    "stylelint-config-recommended-scss": "^14.0.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-order": "^6.0.4",
     "wrangler": "^3.50.0"
   }
 }

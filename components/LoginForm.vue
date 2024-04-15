@@ -59,9 +59,20 @@ const loginForm = reactive<any>({
 
 // login
 const login = async (formEl: FormInstance | undefined) => {
-  await $fetch('/api/ceshi?a=1',{
-    method: 'get',
+  await $fetch('/user/login',{
+    method: 'post',
+    body: {
+      userName:loginForm.username,
+      password:loginForm.password
+    }
+  }).then((res: any) => {
+    if (res.code == 200) {
+      localStorage.setItem('token', res.data);
+    }
   })
+   // await $fetch('/api/ceshi?a=1',{
+  //   method: 'get',
+  // })
   //  await $fetch('/api/hello?a=1',{
   //   method: 'get',
   // })
@@ -113,9 +124,16 @@ const login = async (formEl: FormInstance | undefined) => {
 };
 
 // resetForm
-const resetForm = (formEl: FormInstance | undefined) => {
-  if (!formEl) return;
-  formEl.resetFields();
+const resetForm = async (formEl: FormInstance | undefined) => {
+  // if (!formEl) return;
+  // formEl.resetFields();
+  await $fetch('/user/info',{
+    method: 'get',
+  }).then((res: any) => {
+    // if (res.code == 200) {
+    //   localStorage.setItem('token', res.data);
+    // }
+  })
 };
 
 onMounted(() => {
