@@ -10,11 +10,12 @@ export function generateToken(payload:any) {
   // 设置令牌的有效期，例如 1 小时
   // const expiresIn = '1m';//分钟
   // const expiresIn = '1h';//小时
-  const expiresIn = '1d';//天
+  // const expiresIn = '1d';//天
 
   // 使用 payload、密钥和有效期生成令牌
-  // const token = jwt.sign(payload, secretKey, { expiresIn });
-  const token="112123asda2s1d32132asd.da3sd1a23sd"
+  const token = jwt.sign(payload, secretKey,{
+    expiresIn: (60 * 60 * 24) * 7//7天有效期
+});
 
   return token;
 }
