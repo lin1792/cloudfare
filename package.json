@@ -30,6 +30,8 @@
   "devDependencies": {
     "@nuxt/eslint-config": "^0.3.6",
     "@nuxtjs/stylelint-module": "^5.2.0",
+    "@sidebase/nuxt-auth": "^0.7.1",
+    "@types/jsonwebtoken": "^9.0.6",
     "drizzle-kit": "^0.20.14",
     "eslint": "^9.0.0",
     "sass": "^1.75.0",

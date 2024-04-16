@@ -16,6 +16,7 @@
     </el-form-item>
   </el-form>
   <div class="login-btn">
+    <el-button :icon="CircleClose" round @click="logout(loginFormRef)" size="large">退出</el-button>
     <el-button :icon="CircleClose" round @click="resetForm(loginFormRef)" size="large">重置</el-button>
     <el-button :icon="UserFilled" round @click="login(loginFormRef)" size="large" type="primary" :loading="loading">
       登录
@@ -128,6 +129,18 @@ const resetForm = async (formEl: FormInstance | undefined) => {
   // formEl.resetFields();
   await $fetch('/user/info',{
     method: 'get',
+  }).then((res: any) => {
+    // if (res.code == 200) {
+    //   localStorage.setItem('token', res.data);
+    // }
+  })
+};
+
+const logout = async (formEl: FormInstance | undefined) => {
+  // if (!formEl) return;
+  // formEl.resetFields();
+  await $fetch('/user/logout',{
+    method: 'post',
   }).then((res: any) => {
     // if (res.code == 200) {
     //   localStorage.setItem('token', res.data);
