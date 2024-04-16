@@ -34,5 +34,5 @@ export default eventHandler( async (event) => {
     // Any extra fields
   })
   
-  return {code:200,data:{token:a},message:'登录成功'}
+  return {code:200,data:{token:'123'},message:'登录成功'}
  })
