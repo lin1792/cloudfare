@@ -1,6 +1,6 @@
 //登录接口
 import { eq } from 'drizzle-orm'
-import jwt from "jsonwebtoken";
+import {verify} from "jsonwebtoken";
 
 // import { requireUserSession } from '@nuxtjs/auth-utils';
 export default eventHandler( async (event) => {
@@ -8,7 +8,7 @@ export default eventHandler( async (event) => {
   // console.log(session.user.token)
   try {
      // 验证 Token 的有效性
-     const decoded:any = jwt.verify(session.user.token, 'your_secret_key');
+     const decoded:any = verify(session.user.token, 'your_secret_key');
 
      // 如果 Token 验证通过，则将解码后的用户信息添加到请求对象中
     console.log('decoded', decoded);
