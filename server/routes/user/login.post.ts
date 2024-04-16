@@ -1,6 +1,7 @@
 //登录接口
 import { eq } from 'drizzle-orm'
 import jwt from "jsonwebtoken";
+const jwt2=jwt
 export default eventHandler( async (event) => {
   const body = await readBody(event);
 
@@ -33,7 +34,7 @@ export default eventHandler( async (event) => {
     // Any extra fields
   })
   let token = "" as any
-   token =  jwt.sign(payload, secretKey,{
+   token =  jwt2.sign(payload, secretKey,{
     expiresIn: (60 * 60 * 24) * 7//7天有效期
       });
     console.log(token);
