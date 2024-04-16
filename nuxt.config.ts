@@ -23,10 +23,10 @@ export default defineNuxtConfig({
   },
   css: [
     'element-plus/dist/index.css',
-  ],
-  vite: {
-    plugins:[  nodePolyfills({
-      protocolImports: true,
-    }),]
-  }
+  ]
+  // vite: {
+  //   plugins:[  nodePolyfills({
+  //     protocolImports: true,
+  //   }),]
+  // }
 })
