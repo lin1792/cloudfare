@@ -24,14 +24,6 @@ export default eventHandler( async (event) => {
   // const token =  jwt.sign(payload, secretKey,{
   //   expiresIn: (60 * 60 * 24) * 7//7天有效期
   // });
-  const aa = () => {
-      const token =  jwt.sign(payload, secretKey,{
-    expiresIn: (60 * 60 * 24) * 7//7天有效期
-      });
-    console.log(token);
-    
-  }
-  await aa()
   // // 返回包含令牌的响应
   // res.json({ token });
   await setUserSession(event, {
@@ -40,6 +32,15 @@ export default eventHandler( async (event) => {
     },
     // Any extra fields
   })
-  
+  let token = "" as any
+   token =  jwt.sign(payload, secretKey,{
+    expiresIn: (60 * 60 * 24) * 7//7天有效期
+      });
+    console.log(token);
+    if (token!='') {
+  return {code:200,data:{token:'token'},message:'登录成功'}
+    } else {
   return {code:200,data:{token:'123'},message:'登录成功'}
+    }
+  // return {code:200,data:{token:'123'},message:'登录成功'}
  })
