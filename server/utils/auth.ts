@@ -1,6 +1,6 @@
 // ~/utils/auth.js
 
-import {sign} from "jsonwebtoken";
+// import {sign} from "jsonwebtoken";
 
 // 生成 JWT 令牌
 export function generateToken(payload:any) {
@@ -13,9 +13,12 @@ export function generateToken(payload:any) {
   // const expiresIn = '1d';//天
 
   // 使用 payload、密钥和有效期生成令牌
-  const token = sign(payload, secretKey,{
-    expiresIn: (60 * 60 * 24) * 7//7天有效期
-});
+  // const token = sign(payload, secretKey,{
+  //   expiresIn: (60 * 60 * 24) * 7//7天有效期
+  // });
+  // console.log(sign);
+  
+  const token='132das.dsad123asd.asd'
 
   return token;
 }
