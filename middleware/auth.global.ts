@@ -9,14 +9,14 @@ export default defineNuxtRouteMiddleware((to, from) => {
   //     return navigateTo('/login') //一定要写return
   //   }
   // }
-  if (process.server) {
-    const {$signJwtToken} = useNuxtApp()
-    const validToken = $signJwtToken({token:'1231'}, 'asdasd', {
-        expiresIn: (60 * 60 * 24) * 7//7天有效期
-    });
-    console.log('123123',validToken);
+  // if (process.server) {
+  //   const {$signJwtToken} = useNuxtApp()
+  //   const validToken = $signJwtToken({token:'1231'}, 'asdasd', {
+  //       expiresIn: (60 * 60 * 24) * 7//7天有效期
+  //   });
+  //   console.log('123123',validToken);
     
-    // alert(JSON.stringify(validToken))
-  }
+  //   // alert(JSON.stringify(validToken))
+  // }
 })
 
