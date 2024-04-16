@@ -13,7 +13,8 @@ export function generateToken(payload:any) {
   const expiresIn = '1d';//天
 
   // 使用 payload、密钥和有效期生成令牌
-  const token = jwt.sign(payload, secretKey, { expiresIn });
+  // const token = jwt.sign(payload, secretKey, { expiresIn });
+  const token="112123asda2s1d32132asd.da3sd1a23sd"
 
   return token;
 }
