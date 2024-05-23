@@ -16,6 +16,7 @@
     </el-form-item>
   </el-form>
   <div class="login-btn">
+    <el-button :icon="CircleClose" round @click="logout(loginFormRef)" size="large">退出</el-button>
     <el-button :icon="CircleClose" round @click="resetForm(loginFormRef)" size="large">重置</el-button>
     <el-button :icon="UserFilled" round @click="login(loginFormRef)" size="large" type="primary" :loading="loading">
       登录
@@ -37,6 +38,7 @@ import { ref, reactive, onMounted } from "vue";
 // import { initDynamicRouter } from "@/routers/modules/dynamicRouter";
 import { CircleClose, UserFilled } from "@element-plus/icons-vue";
 import type { ElForm } from "element-plus";
+import {getUserInfo} from "@/api/module/user";
 // import md5 from "js-md5";
 
 // const router = useRouter();
@@ -67,6 +69,10 @@ const login = async (formEl: FormInstance | undefined) => {
     body: {
       userName:loginForm.username,
       password:loginForm.password
+    }
+  }).then((res:any)=>{
+    if (res.code == 200) {
+      localStorage.setItem('token', res.data.token);
     }
   })
    // await $fetch('/api/ceshi?a=1',{
@@ -126,8 +132,22 @@ const login = async (formEl: FormInstance | undefined) => {
 const resetForm = async (formEl: FormInstance | undefined) => {
   // if (!formEl) return;
   // formEl.resetFields();
-  await $fetch('/user/info',{
-    method: 'get',
+  getUserInfo()
+  // await $fetch('/user/info',{
+  //   method: 'get',
+  //   headers: {
+  //   token: localStorage.getItem('token') as any
+  // },
+  // }).then((res: any) => {
+   
+  // })
+};
+
+const logout = async (formEl: FormInstance | undefined) => {
+  // if (!formEl) return;
+  // formEl.resetFields();
+  await $fetch('/user/logout',{
+    method: 'post',
   }).then((res: any) => {
     // if (res.code == 200) {
     //   localStorage.setItem('token', res.data);
