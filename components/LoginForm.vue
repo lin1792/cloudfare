@@ -38,6 +38,7 @@ import { ref, reactive, onMounted } from "vue";
 // import { initDynamicRouter } from "@/routers/modules/dynamicRouter";
 import { CircleClose, UserFilled } from "@element-plus/icons-vue";
 import type { ElForm } from "element-plus";
+import {getUserInfo} from "@/api/module/user";
 // import md5 from "js-md5";
 
 // const router = useRouter();
@@ -68,6 +69,10 @@ const login = async (formEl: FormInstance | undefined) => {
     body: {
       userName:loginForm.username,
       password:loginForm.password
+    }
+  }).then((res:any)=>{
+    if (res.code == 200) {
+      localStorage.setItem('token', res.data.token);
     }
   })
    // await $fetch('/api/ceshi?a=1',{
@@ -127,13 +132,15 @@ const login = async (formEl: FormInstance | undefined) => {
 const resetForm = async (formEl: FormInstance | undefined) => {
   // if (!formEl) return;
   // formEl.resetFields();
-  await $fetch('/user/info',{
-    method: 'get',
-  }).then((res: any) => {
-    // if (res.code == 200) {
-    //   localStorage.setItem('token', res.data);
-    // }
-  })
+  getUserInfo()
+  // await $fetch('/user/info',{
+  //   method: 'get',
+  //   headers: {
+  //   token: localStorage.getItem('token') as any
+  // },
+  // }).then((res: any) => {
+   
+  // })
 };
 
 const logout = async (formEl: FormInstance | undefined) => {

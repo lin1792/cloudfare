@@ -1,15 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { nodePolyfills } from 'vite-plugin-node-polyfills'
 export default defineNuxtConfig({
   devtools: { enabled: true },
   build: {
-    transpile: ['jsonwebtoken']
   },
   plugins: [
-    // nodePolyfills(),
-    // nodePolyfills({
-    //   protocolImports: true,
-    // }),
   ],
   modules: ["@nuxthub/core", "nuxt-auth-utils",'@nuxtjs/stylelint-module'],
   $development: {
@@ -24,9 +18,5 @@ export default defineNuxtConfig({
   css: [
     'element-plus/dist/index.css',
   ]
-  // vite: {
-  //   plugins:[  nodePolyfills({
-  //     protocolImports: true,
-  //   }),]
-  // }
+
 })

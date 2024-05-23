@@ -13,3 +13,8 @@ export const user = sqliteTable('user', {
   password: text('password').notNull(),
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
 })
+export const online = sqliteTable('online', {
+  userId: integer('userId').primaryKey(),
+  token: text('token').notNull(), // GitHub Id
+  createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
+})
