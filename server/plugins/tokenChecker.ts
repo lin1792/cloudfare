@@ -20,6 +20,6 @@ export default defineNitroPlugin(() => {
   }
 
   // 设置定时器，每隔一段时间执行一次检查函数
-  const interval = 100 * 1000; // 每隔 60 秒执行一次检查
-  setInterval(checkTokensValidity, interval);
+  // const interval = 100 * 1000; // 每隔 60 秒执行一次检查
+  // setInterval(checkTokensValidity, interval);
 });
