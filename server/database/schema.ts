@@ -14,7 +14,8 @@ export const user = sqliteTable('user', {
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
 })
 export const online = sqliteTable('online', {
-  userId: integer('userId').primaryKey(),
+  id:integer('id').primaryKey(),
+  userId: integer('userId'),
   token: text('token').notNull(), // GitHub Id
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
 })

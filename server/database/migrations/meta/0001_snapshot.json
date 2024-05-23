@@ -1,17 +1,24 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "e2695062-96b5-4d7d-95cf-a29c6de4aeda",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "8a2180f7-0517-4978-adc3-c4ced69dc2e2",
+  "prevId": "e2695062-96b5-4d7d-95cf-a29c6de4aeda",
   "tables": {
     "online": {
       "name": "online",
       "columns": {
-        "userId": {
-          "name": "userId",
+        "id": {
+          "name": "id",
           "type": "integer",
           "primaryKey": true,
           "notNull": true,
+          "autoincrement": false
+        },
+        "userId": {
+          "name": "userId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
           "autoincrement": false
         },
         "token": {
