@@ -1,7 +1,0 @@
-[[ d1_databases ]]
-binding = "DB"
-database_name = "init-project"
-database_id = "c04012d5-23b3-40b0-a028-ccff7560c8f9"
-preview_database_id = "<UUID>"
-migrations_table = "d1_migrations"
-migrations_dir = "server/database/migrations"

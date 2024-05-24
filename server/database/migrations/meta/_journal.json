@@ -8,6 +8,13 @@
       "when": 1716528312348,
       "tag": "0000_thick_glorian",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1716537578366,
+      "tag": "0001_windy_plazm",
+      "breakpoints": true
     }
   ]
 }

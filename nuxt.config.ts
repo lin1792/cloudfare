@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   $development: {
     hub: {
       database: true,
-      // remote: true
+      remote: true
     }
   },
   hub: {
@@ -20,5 +20,8 @@ export default defineNuxtConfig({
       // Enable Server API documentation within NuxtHub
       openAPI: true
     }
-  }
+  },
+  // runtimeConfig: {
+  //   workerApiUrl: process.env.WORKER_API_URL || 'https://my-worker.1792048892.workers.dev',
+  // },
 })
