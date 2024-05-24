@@ -1,3 +1,10 @@
+CREATE TABLE `online` (
+	`id` integer PRIMARY KEY NOT NULL,
+	`userId` integer,
+	`token` text NOT NULL,
+	`created_at` integer NOT NULL
+);
+--> statement-breakpoint
 CREATE TABLE `users` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`name` text NOT NULL,
