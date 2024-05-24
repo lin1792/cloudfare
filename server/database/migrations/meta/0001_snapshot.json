@@ -34,26 +34,82 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
+<<<<<<< HEAD
     "users": {
       "name": "users",
+=======
+    "todos": {
+      "name": "todos",
+>>>>>>> 57e9f4b238149dae76faa506451c873664303b58
       "columns": {
         "id": {
           "name": "id",
           "type": "integer",
           "primaryKey": true,
           "notNull": true,
+<<<<<<< HEAD
           "autoincrement": true
         },
         "name": {
           "name": "name",
+=======
+          "autoincrement": false
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "title": {
+          "name": "title",
+>>>>>>> 57e9f4b238149dae76faa506451c873664303b58
           "type": "text",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         },
+<<<<<<< HEAD
         "email": {
           "name": "email",
           "type": "text",
+=======
+        "completed": {
+          "name": "completed",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": 0
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "user": {
+      "name": "user",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "user_name": {
+          "name": "user_name",
+          "type": "integer",
+>>>>>>> 57e9f4b238149dae76faa506451c873664303b58
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -65,6 +121,7 @@
           "notNull": true,
           "autoincrement": false
         },
+<<<<<<< HEAD
         "avatar": {
           "name": "avatar",
           "type": "text",
@@ -72,6 +129,8 @@
           "notNull": true,
           "autoincrement": false
         },
+=======
+>>>>>>> 57e9f4b238149dae76faa506451c873664303b58
         "created_at": {
           "name": "created_at",
           "type": "integer",
@@ -80,6 +139,7 @@
           "autoincrement": false
         }
       },
+<<<<<<< HEAD
       "indexes": {
         "users_email_unique": {
           "name": "users_email_unique",
@@ -89,6 +149,9 @@
           "isUnique": true
         }
       },
+=======
+      "indexes": {},
+>>>>>>> 57e9f4b238149dae76faa506451c873664303b58
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}

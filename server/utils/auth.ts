@@ -20,7 +20,6 @@ export async function generateToken(payload:any) {
   .sign(secretKey);
   
 console.log('token',token);
-
   return token;
 }
 
