@@ -1,6 +1,8 @@
 <template>
   <div class="layout-default">
-    <NuxtPage></NuxtPage>
+    <ClientOnly>
+      <NuxtPage></NuxtPage>
+    </ClientOnly>
   </div>
 </template>
 <style lang="scss" scoped>
