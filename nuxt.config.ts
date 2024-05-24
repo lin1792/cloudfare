@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   modules: ["@nuxthub/core", "nuxt-auth-utils",'@nuxtjs/stylelint-module'],
   $development: {
     hub: {
+      // database: true,
       remote: true
     }
   },

@@ -67,7 +67,7 @@ const login = async (formEl: FormInstance | undefined) => {
   await $fetch('/user/login',{
     method: 'post',
     body: {
-      userName:loginForm.username,
+      name:loginForm.username,
       password:loginForm.password
     }
   }).then((res:any)=>{

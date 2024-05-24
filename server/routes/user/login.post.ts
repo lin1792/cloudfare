@@ -4,7 +4,7 @@ export default eventHandler( async (event) => {
   const body = await readBody(event);
 
   // 在这里进行用户名和密码的验证逻辑
-  const nameMatch = await useDB().select().from(tables.user).where(eq(tables.user.userName, body.userName)).all()
+  const nameMatch = await useDB().select().from(tables.users).where(eq(tables.users.name, body.name)).all()
   // console.log(nameMatch);
   if (nameMatch.length<1) {
     return {code:401,data:null,message:'用户名不存在'}

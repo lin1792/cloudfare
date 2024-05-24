@@ -1,16 +1,11 @@
 import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core'
 
-export const todos = sqliteTable('todos', {
-  id: integer('id').primaryKey(),
-  userId: integer('user_id').notNull(), // GitHub Id
-  title: text('title').notNull(),
-  completed: integer('completed').notNull().default(0),
-  createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
-})
-export const user = sqliteTable('user', {
-  id: integer('id').primaryKey(),
-  userName: integer('user_name').notNull(), // GitHub Id
+export const users = sqliteTable('users', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  name: text('name').notNull(),
+  email: text('email').notNull().unique(),
   password: text('password').notNull(),
+  avatar: text('avatar').notNull(),
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
 })
 export const online = sqliteTable('online', {
