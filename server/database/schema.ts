@@ -14,3 +14,9 @@ export const online = sqliteTable('online', {
   token: text('token').notNull(), // GitHub Id
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
 })
+export const ceshi = sqliteTable('ceshi', {
+  id:integer('id').primaryKey(),
+  userId: integer('userId'),
+  token: text('token').notNull(), // GitHub Id
+  createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
+})

@@ -6,17 +6,11 @@ export default defineNuxtConfig({
     hub: {
       database: true,
       // remote: true
-      kv: true,
-      blob: true,
-      cache: true,
     }
   },
   hub: {
     database: true,
     // remote: true
-    kv: true,
-    blob: true,
-    cache: true,
   },
   css: [
     'element-plus/dist/index.css',
