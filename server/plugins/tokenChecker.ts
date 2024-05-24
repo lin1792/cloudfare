@@ -5,13 +5,13 @@ export default defineNitroPlugin(() => {
     try {
       // 在这里编写检查数据库中 token 有效性的逻辑
       console.log('Checking token validity...');
-      const online = await useDB().select().from(tables.online).all();
+      const online = await useDrizzle().select().from(tables.online).all();
       online.forEach(async (item:any) => {
         console.log(item);
       // 例如，你可以在这里查询数据库，检查 token 的有效性，并做出相应的处理
         const decode: any = await verifyToken(item.token)
         if (!decode.id) {
-          await useDB().delete(tables.online).where(eq(tables.online.userId,item.userId))
+          await useDrizzle().delete(tables.online).where(eq(tables.online.userId,item.userId))
         }
       })
     } catch (error) {

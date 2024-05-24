@@ -4,7 +4,7 @@ export default eventHandler( async (event) => {
   const body = await readBody(event);
 
   // 在这里进行用户名和密码的验证逻辑
-  const nameMatch = await useDB().select().from(tables.users).where(eq(tables.users.name, body.name)).all()
+  const nameMatch = await useDrizzle().select().from(tables.users).where(eq(tables.users.name, body.name)).all()
   // console.log(nameMatch);
   if (nameMatch.length<1) {
     return {code:401,data:null,message:'用户名不存在'}
@@ -27,17 +27,17 @@ export default eventHandler( async (event) => {
 
   if (token) {
     //更新token
-    const userOnline = await useDB().select().from(tables.online).where(eq(tables.online.userId, payload.id))
+    const userOnline = await useDrizzle().select().from(tables.online).where(eq(tables.online.userId, payload.id))
     console.log(userOnline);
     if (userOnline.length>0) {
-      await useDB().update(tables.online).set({
+      await useDrizzle().update(tables.online).set({
         token:token,
         createdAt: new Date()
       }).where(and(
         eq(tables.online.userId, payload.id)
       ))
     } else {
-      await useDB().insert(tables.online).values({
+      await useDrizzle().insert(tables.online).values({
         userId: payload.id,
         token:token,
         createdAt: new Date()
